@@ -11,12 +11,14 @@ class UserCreate(BaseModel): # ce que l'user envoie a la db
     password: str
     email: EmailStr
     adresse: str
+    phone_number: str
 
 class UserOut(BaseModel): #ce que l'user recoit de la db
     id : int
     email : EmailStr
     adresse : str
     created_at : datetime
+    phone_number : str
     class Config:
         orm_mode = True
 

@@ -29,4 +29,4 @@ class Users(Base):
     email = Column(String, nullable = False, unique = True)
     adresse = Column(String, nullable = False)
     created_at = Column(TIMESTAMP(timezone=True), server_default=func.now(), nullable=False)
-    phone_number = Column(String)
+    phone_number = Column(String, nullable = False)
