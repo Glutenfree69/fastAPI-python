@@ -13,12 +13,21 @@ class UserCreate(BaseModel): # ce que l'user envoie a la db
     adresse: str
     phone_number: str
 
+class UserUpdate(BaseModel):
+    username: str
+    email: EmailStr
+    adresse: str
+    phone_number: str
+    class Config:
+        orm_mode = True
+
 class UserOut(BaseModel): #ce que l'user recoit de la db
     id : int
     email : EmailStr
     adresse : str
     created_at : datetime
-    phone_number : str
+    phone_number: Optional[str] = None
+    username: str
     class Config:
         orm_mode = True
 
@@ -29,6 +38,7 @@ class UserLogin(BaseModel):
 class Token(BaseModel):
     access_token: str
     token_type: str
+    id: int
 
 class TokenData(BaseModel):
     id: Optional[str] = None
