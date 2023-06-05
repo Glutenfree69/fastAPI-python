@@ -21,7 +21,7 @@ def get_posts(db : Session = Depends(get_db), limit: int = 100, skip: int = 0, s
 
 
 @router.post("/", status_code=status.HTTP_201_CREATED, response_model=schemas.ProductResponse)
-def create_posts(post: schemas.ProductCreate, db : Session = Depends(get_db), current_user: int = Depends(oauth2.get_current_user)):         #la dernuère dependance permet d'obliger l'user à être co pour créer un truc
+def create_posts(post: schemas.ProductCreate, db : Session = Depends(get_db), current_user: int = Depends(oauth2.get_current_user)):         #la dernière dependance permet d'obliger l'user à être co pour créer un truc
     # cursor.execute(""" INSERT INTO products (name, price, description, inventory, created_at, public) VALUES (%s, %s, %s, %s, %s, %s) RETURNING * """, (post.name, post.price, post.description, post.inventory, post.created_at, post.public))
     # new_post = cursor.fetchone()
     # conn.commit() #push les changements dans la db
