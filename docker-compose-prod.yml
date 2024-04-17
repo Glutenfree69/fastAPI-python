@@ -8,8 +8,8 @@ services:
     ports:
       - 80:8000
     # command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
-    # env_file:
-    #   - ./.env
+    env_file:
+      - ./.env
     environment:
       - DATABASE_HOSTNAME=${DATABASE_HOSTNAME}
       - DATABASE_PORT=${DATABASE_PORT}
